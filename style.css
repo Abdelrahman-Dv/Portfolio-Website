@@ -1,0 +1,709 @@
+/*  Start Variables  */
+:root {
+  --main-color: #601cfc;
+  --secondary-color: #3a6cf4;
+  --section-background: #f1f1f1;
+  --section-h2: #333;
+  --section-p: #777;
+  --main-duration: 0.3s;
+}
+
+/* Start Global Rules */
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+section {
+  padding: 100px 200px;
+}
+
+/* Start Header */
+header {
+  background-color: var(--section-background);
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+}
+
+/* Logo */
+header .logo {
+  text-decoration: none;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8em;
+}
+
+/* Navigation Desktop */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.navigation a:hover {
+  color: var(--main-color);
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Menu icon */
+.menu-icon {
+  display: none;
+  font-size: 1.8em;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+  header {
+    padding: 12px 20px;
+  }
+
+  /* Show burger icon */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hide menu (mobile default) */
+  .navigation {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: var(--section-background);
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    border-top: 1px solid #333;
+    padding: 20px 0;
+  }
+
+  .navigation a {
+    padding: 15px 0;
+    font-size: 1.2em;
+  }
+
+  /* Show menu when checkbox = checked */
+  #menu-toggle:checked ~ .navigation {
+    display: flex;
+  }
+}
+/* End Header */
+
+/* Start Landing */
+
+.landing {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url(images/landing-03.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background-attachment: fixed; */
+}
+.landing h2 {
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: 500;
+}
+.landing h2 span {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--secondary-color);
+  font-size: 3em;
+  font-weight: 600;
+}
+.landing h3 {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.landing .main-btn {
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+  padding: 15px 35px;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin-bottom: 40px;
+  transition: var(--main-duration) ease;
+  -webkit-transition: var(--main-duration) ease;
+  -moz-transition: var(--main-duration) ease;
+  -ms-transition: var(--main-duration) ease;
+  -o-transition: var(--main-duration) ease;
+  cursor: pointer;
+}
+.landing .main-btn:hover {
+  background-color: var(--main-color);
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.landing .social-icons a {
+  color: #fff;
+  font-size: 1.7em;
+  padding-right: 30px;
+}
+.landing .social-icons a:hover i {
+  color: var(--main-color);
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transition: all var(--main-duration);
+  -webkit-transition: all var(--main-duration);
+  -moz-transition: all var(--main-duration);
+  -ms-transition: all var(--main-duration);
+  -o-transition: all var(--main-duration);
+}
+/* ---------- Responsive Landing ---------- */
+
+@media (max-width: 992px) {
+  .landing h2 {
+    font-size: 1.2em;
+  }
+  .landing h2 span {
+    font-size: 2.5em;
+  }
+  .landing h3 {
+    font-size: 1.7em;
+  }
+  .landing .main-btn {
+    padding: 12px 28px;
+    font-size: 1em;
+  }
+  .landing .social-icons a {
+    font-size: 1.5em;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .landing h2 {
+    font-size: 1.1em;
+  }
+  .landing h2 span {
+    font-size: 2.2em;
+  }
+  .landing h3 {
+    font-size: 1.4em;
+  }
+
+  .landing .main-btn {
+    padding: 12px 25px;
+    font-size: 0.95em;
+  }
+
+  .landing .social-icons a {
+    font-size: 1.3em;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing {
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .landing h2 {
+    font-size: 1em;
+  }
+  .landing h2 span {
+    font-size: 1.8em;
+  }
+  .landing h3 {
+    font-size: 1.1em;
+    line-height: 1.4;
+  }
+
+  .landing .main-btn {
+    padding: 10px 22px;
+    font-size: 0.85em;
+  }
+
+  .landing .social-icons a {
+    font-size: 1.2em;
+    padding-right: 12px;
+  }
+}
+
+/* End Landing */
+
+/* Start Services  */
+.title {
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 2.3em;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.content .card {
+  background-color: #ffffff;
+  width: 20em;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.content .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.content .serv-icons {
+  color: var(--main-color);
+  font-size: 4em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.content .info {
+  text-align: center;
+}
+
+.content .info h3 {
+  color: var(--secondary-color);
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.content .info p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* End Services */
+
+/* Start Projects */
+
+.projects {
+  background-color: #18232b;
+}
+.projects .content {
+  margin-top: 30px;
+}
+
+.project-card {
+  background-color: #fff;
+  border: 1px solid #fff;
+  min-height: 14em;
+  width: 23em;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin: 20px;
+  transition: var(--main-duration) ease;
+  -webkit-transition: var(--main-duration) ease;
+  -moz-transition: var(--main-duration) ease;
+  -ms-transition: var(--main-duration) ease;
+  -o-transition: var(--main-duration) ease;
+  cursor: pointer;
+}
+.project-card:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.project-img img {
+  width: 100%;
+}
+.project-card:hover .project-img {
+  opacity: 0.9;
+}
+.project-info {
+  padding: 1em;
+}
+.project-category {
+  font-size: 0.8em;
+  color: #000;
+}
+
+.project-title {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.link-btn {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+.link-btn:hover {
+  color: var(--main-color);
+}
+/* End Projects */
+
+/* Start Contact */
+.contact {
+  padding: 80px 0;
+}
+
+.contact .title {
+  text-align: center;
+  font-size: 2.3em;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: var(--secondary-color);
+}
+
+.contact .content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.contact .card {
+  background: #fff;
+  width: 17em;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  transition: var(--main-duration) ease;
+  -webkit-transition: var(--main-duration) ease;
+  -moz-transition: var(--main-duration) ease;
+  -ms-transition: var(--main-duration) ease;
+  -o-transition: var(--main-duration) ease;
+}
+
+.contact .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+  -o-transform: translateY(-8px);
+}
+
+.contact-icons {
+  color: var(--main-color);
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.contact .info h3 {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.contact .info p {
+  color: #444;
+  font-size: 0.8em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+/* End Contact  */
+
+/* Start Footer */
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 1.5em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  border-top: 1px solid #333;
+}
+
+/* Text */
+.footer-title {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.footer-title a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Social Icons */
+.footer .social-icons {
+  display: flex;
+  gap: 0.8em;
+  color: #fff;
+}
+
+.footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: var(--main-duration);
+  -webkit-transition: var(--main-duration);
+  -moz-transition: var(--main-duration);
+  -ms-transition: var(--main-duration);
+  -o-transition: var(--main-duration);
+}
+
+.footer .social-icons a:hover {
+  background: var(--secondary-color);
+  color: #fff;
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
+}
+/* End Footer  */
+
+/* ---------- Responsive Enhancements (append this to the end of the file) ---------- */
+
+/* Ensure fixed header doesn't cover content */
+
+/* Make images and media fluid */
+img,
+picture,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Make cards and content fluid using flex / grid-friendly sizing */
+.content,
+.contact .content {
+  gap: 24px;
+}
+
+/* Services cards: use relative widths so they adapt */
+.content .card,
+.contact .card,
+.project-card {
+  width: 100%;
+  max-width: 360px; /* constrain on large screens */
+}
+
+/* Projects section: use responsive grid layout */
+.projects .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  align-items: start;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+/* General sections spacing: mobile-first adjustments */
+section {
+  padding: 80px 40px;
+}
+@media (max-width: 1200px) {
+  section {
+    padding: 70px 36px;
+  }
+  header .logo {
+    font-size: 1.6em;
+  }
+}
+@media (max-width: 992px) {
+  section {
+    padding: 60px 28px;
+  }
+  .title,
+  .contact .title {
+    font-size: 2em;
+  }
+  .landing {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+  /* Landing text sizes already adjusted in your file - keep consistent */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 18px;
+  }
+  /* Navigation: keep burger visible & accessible */
+  .menu-icon {
+    display: block;
+  }
+  .navigation {
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  /* Services and contact stack full width */
+  .content {
+    justify-content: center;
+    padding: 0 12px;
+  }
+
+  .content .card,
+  .contact .card,
+  .project-card {
+    max-width: 420px;
+  }
+
+  .landing .main-btn {
+    padding: 10px 22px;
+  }
+
+  .footer {
+    padding: 1.2em;
+    gap: 0.6em;
+  }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 50px 16px;
+  }
+
+  header .logo {
+    font-size: 1.25em;
+  }
+
+  .navigation a {
+    font-size: 1.05em;
+    padding: 12px 0;
+  }
+
+  .landing h2 {
+    font-size: 0.95em;
+  }
+  .landing h2 span {
+    font-size: 1.6em;
+  }
+  .landing h3 {
+    font-size: 1.05em;
+  }
+
+  .content .serv-icons {
+    font-size: 2.2em;
+  }
+
+  .contact .card,
+  .content .card,
+  .project-card {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 420px) {
+  body {
+    font-size: 13px;
+  }
+  section {
+    padding: 40px 12px;
+  }
+  .landing h2 span {
+    font-size: 1.4em;
+  }
+  .landing .social-icons a {
+    padding-right: 8px;
+    font-size: 1.1em;
+  }
+  .menu-icon {
+    font-size: 1.6em;
+  }
+}
+
+/* Accessibility tweak: focus styles for keyboard nav */
+.navigation a:focus,
+.menu-icon:focus,
+.link-btn:focus,
+.main-btn:focus {
+  outline: 3px solid rgba(96, 28, 252, 0.18);
+  outline-offset: 3px;
+}
+
+/* Minor utility helpers */
+.hide-on-mobile {
+  display: none;
+}
+@media (min-width: 769px) {
+  .hide-on-mobile {
+    display: initial;
+  }
+}
+
+/* End Responsive Enhancements */
